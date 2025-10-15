@@ -96,3 +96,21 @@ Cardboard, construction paper, Dither Boy, BFXR, and any royalty free music site
 
 Deployment Platform (PC build, web, mobile, etc.):
 PC. I don’t think we’re planning on porting it anywhere else, though it’s a possibility.
+
+## 9. Weeks 5-9 Schedule:
+Week 5:
+-Basic player/environmental assets/textures, screen size/resolution solved
+-Basic movement, interaction, transit programming
+
+Week 6:
+-Presentation
+-All basic functionality (assets, movement, navigation, etc)
+
+Week 7:
+-Individual puzzles all done
+
+Week 8:
+-All assets for all puzzles
+
+Week 9:
+-Testing/iteration week!
