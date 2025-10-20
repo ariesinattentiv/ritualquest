@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyp2fmpgd13rq"]
+
+[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_w0ydv"]
+[ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_4et86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
+size = Vector2(478, 48)
+
+[node name="room 2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(247, 232)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(3.71875, 0.3828125)
+texture = ExtResource("1_w0ydv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_r8opr")
+
+[node name="DoorE" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(406, 152)
+door_tag = "DoorE"
+destination_room = "room 1"
+destination_door = "DoorE"
+
+[node name="DoorW" parent="." instance=ExtResource("2_4et86")]
+position = Vector2(90.99999, 146.99998)
+door_tag = "DoorW"
+destination_room = "room 1"
+destination_door = "DoorW"
