@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dubx5pv3ectu8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_liqgt"]
+size = Vector2(594.5, 235)
+
+[node name="Room" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+constant_linear_velocity = Vector2(0, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(400, 24)
+shape = SubResource("RectangleShape2D_liqgt")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://evgs2en8b83r"]
+
+[ext_resource type="Texture2D" uid="uid://7tt1aaptxa3l" path="res://character/hooded_character.png" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://cb3gwmo1shrj4" path="res://scripts/Player.gd" id="1_v6fml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0vlq"]
+size = Vector2(428, 256)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v6fml")
+speed = 160.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.231, 0.3)
+texture = ExtResource("1_p0vlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-54, 426)
+shape = SubResource("RectangleShape2D_p0vlq")

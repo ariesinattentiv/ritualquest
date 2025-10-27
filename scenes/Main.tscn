@@ -1,0 +1,134 @@
+[gd_scene load_steps=10 format=3 uid="uid://155xx7s6y6ta"]
+
+[ext_resource type="Script" uid="uid://4vluso06ph7o" path="res://scripts/Main.gd" id="1_rvslj"]
+[ext_resource type="PackedScene" uid="uid://dubx5pv3ectu8" path="res://scenes/Room.tscn" id="2_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://evgs2en8b83r" path="res://scenes/Player.tscn" id="3_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://c4rddiwl7s2f1" path="res://assets/background.png" id="4_rarhs"]
+[ext_resource type="Script" uid="uid://bwgjehp2acios" path="res://scenes/InventoryGrid.gd" id="5_vcsgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rarhs"]
+size = Vector2(355, 726.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rarhs"]
+bg_color = Color(0.79433626, 0.52072394, 0.4476511, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcsgt"]
+bg_color = Color(0.7011095, 0.56541044, 0.52228385, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rarhs"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(-8, 0)
+script = ExtResource("1_rvslj")
+
+[node name="WorldRoot" type="Node2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="Room" parent="WorldRoot" instance=ExtResource("2_0bbpv")]
+
+[node name="Player" parent="WorldRoot" instance=ExtResource("3_0bbpv")]
+z_index = 10
+z_as_relative = false
+position = Vector2(472, 489)
+scale = Vector2(0.4, 0.4)
+
+[node name="Background" type="Sprite2D" parent="WorldRoot"]
+z_index = -1
+position = Vector2(756.99994, 342.00003)
+scale = Vector2(0.55800706, 0.7198795)
+texture = ExtResource("4_rarhs")
+
+[node name="Walls" type="Node2D" parent="WorldRoot"]
+position = Vector2(-456, -2)
+
+[node name="LeftWall" type="StaticBody2D" parent="WorldRoot/Walls"]
+position = Vector2(-347, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldRoot/Walls/LeftWall"]
+position = Vector2(986, 355)
+shape = SubResource("RectangleShape2D_rarhs")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Root" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -799.0
+offset_top = -569.0
+offset_right = -1101.0
+offset_bottom = -610.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Row" type="HBoxContainer" parent="UI/Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 797.0
+offset_top = 562.0
+offset_right = 301.0
+offset_bottom = 662.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LeftCol" type="VBoxContainer" parent="UI/Root/Row"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LeftTop" type="PanelContainer" parent="UI/Root/Row/LeftCol"]
+z_index = -10
+custom_minimum_size = Vector2(0, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rarhs")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Root/Row/LeftCol/LeftTop"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="InvBox" type="VBoxContainer" parent="UI/Root/Row/LeftCol/LeftTop/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="InventoryTitle" type="Label" parent="UI/Root/Row/LeftCol/LeftTop/MarginContainer/InvBox"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 23
+text = "Inventory
+"
+
+[node name="InventoryGrid" type="GridContainer" parent="UI/Root/Row/LeftCol/LeftTop/MarginContainer/InvBox"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+script = ExtResource("5_vcsgt")
+
+[node name="LeftBottom" type="PanelContainer" parent="UI/Root/Row/LeftCol"]
+custom_minimum_size = Vector2(360, 360)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vcsgt")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Root/Row/LeftCol/LeftBottom"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="StoryText" type="RichTextLabel" parent="UI/Root/Row/LeftCol/LeftBottom"]
+layout_mode = 2
+
+[node name="RightCol" type="PanelContainer" parent="UI/Root/Row"]
+visible = false
+z_index = -1
+custom_minimum_size = Vector2(720, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_rarhs")
