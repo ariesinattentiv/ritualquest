@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyevsdn7km8b1"]
+
+[ext_resource type="Texture2D" uid="uid://bumumwn6i5kur" path="res://assets/placeholder assets/book png.png" id="1_myxwj"]
+[ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="2_myxwj"]
+[ext_resource type="Texture2D" uid="uid://ctpeeuirw4drd" path="res://assets/placeholder assets/door frames/door1.png" id="3_gq0ag"]
+[ext_resource type="Texture2D" uid="uid://cs8je05td3xkj" path="res://assets/placeholder assets/door frames/door5.png" id="4_bq8ns"]
+[ext_resource type="Script" uid="uid://c1dm60iry03br" path="res://scripts/excerpt.gd" id="5_8ovnq"]
+
+[node name="Research Notes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(657.1875, 376.5)
+scale = Vector2(3.090057, 2.517143)
+texture = ExtResource("1_myxwj")
+script = ExtResource("2_myxwj")
+
+[node name="Next page" type="TextureButton" parent="Sprite2D"]
+offset_left = 133.59383
+offset_top = -31.583427
+offset_right = 144.92049
+offset_bottom = 6.1577682
+texture_normal = ExtResource("3_gq0ag")
+stretch_mode = 0
+
+[node name="Previous page" type="TextureButton" parent="Sprite2D"]
+offset_left = -143.74736
+offset_top = -31.980701
+offset_right = -127.24281
+offset_bottom = 1.7877388
+texture_normal = ExtResource("4_bq8ns")
+stretch_mode = 0
+
+[node name="page1" type="Control" parent="Sprite2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Excerpt_Obj" type="Node2D" parent="Sprite2D/page1"]
+script = ExtResource("5_8ovnq")
+metadata/_custom_type_script = "uid://c1dm60iry03br"
+
+[node name="page2" type="Control" parent="Sprite2D"]
+layout_mode = 3
+anchors_preset = 0
+
+[connection signal="pressed" from="Sprite2D/Next page" to="Sprite2D" method="_on_next_page_pressed"]
+[connection signal="pressed" from="Sprite2D/Previous page" to="Sprite2D" method="_on_previous_page_pressed"]
