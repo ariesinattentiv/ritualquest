@@ -1,34 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyp2fmpgd13rq"]
+[gd_scene load_steps=5 format=3 uid="uid://cyp2fmpgd13rq"]
 
+[ext_resource type="Texture2D" uid="uid://brepn33u2f4uf" path="res://assets/general assets/rooms/testing lab/final/txd5.jpg" id="1_7yvxp"]
 [ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_w0ydv"]
 [ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_4et86"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
-size = Vector2(478, 48)
+size = Vector2(810, 38)
 
 [node name="room 2" type="Node2D"]
 
+[node name="Txd5" type="Sprite2D" parent="."]
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("1_7yvxp")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(247, 232)
+position = Vector2(0, 180)
 collision_layer = 2
 collision_mask = 0
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(3.71875, 0.3828125)
-texture = ExtResource("1_w0ydv")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_r8opr")
 
-[node name="DoorE" parent="." instance=ExtResource("2_4et86")]
-position = Vector2(406, 152)
-door_tag = "DoorE"
-destination_room = "room 1"
-destination_door = "DoorE"
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(6.3, 0.344)
+texture = ExtResource("1_w0ydv")
 
 [node name="DoorW" parent="." instance=ExtResource("2_4et86")]
-position = Vector2(90.99999, 146.99998)
+position = Vector2(-298.99997, 85.000015)
 door_tag = "DoorW"
-destination_room = "room 1"
+destination_room = "rm_botany_lab"
 destination_door = "DoorW"

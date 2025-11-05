@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://co0vpsgxqmtb2"]
+
+[ext_resource type="Texture2D" uid="uid://brxow657ok47f" path="res://assets/general assets/rooms/gemstone lab/final/txd9.jpg" id="1_fcfqi"]
+[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_o32af"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
+size = Vector2(810, 38)
+
+[node name="room 1" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.219, 0.219)
+texture = ExtResource("1_fcfqi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_pcal6")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(6.3, 0.344)
+texture = ExtResource("1_o32af")

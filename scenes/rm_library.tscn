@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4v1pw52w4nv8"]
+
+[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_pmnxm"]
+[ext_resource type="Texture2D" uid="uid://mv4vfrhey34n" path="res://assets/general assets/rooms/library/final/txd2.jpg" id="1_tm8qa"]
+[ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_rjoje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
+size = Vector2(810, 38)
+
+[node name="room 3" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.221, 0.221)
+texture = ExtResource("1_tm8qa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_r8opr")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(6.3, 0.344)
+texture = ExtResource("1_pmnxm")
+
+[node name="DoorE" parent="." instance=ExtResource("2_rjoje")]
+position = Vector2(281.00003, 96.000015)
+door_tag = "DoorE"
+destination_room = "rm_candle_archive"
+destination_door = "DoorE"

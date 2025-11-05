@@ -1,0 +1,58 @@
+[gd_scene load_steps=13 format=3 uid="uid://dpmdv0r5d65uq"]
+
+[ext_resource type="PackedScene" uid="uid://bxsdb7yq36sev" path="res://scenes/rm_botany_lab.tscn" id="1_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cyp2fmpgd13rq" path="res://scenes/rm_testing_lab.tscn" id="2_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b4v1pw52w4nv8" path="res://scenes/rm_library.tscn" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://co0vpsgxqmtb2" path="res://scenes/rm_gemstone_lab.tscn" id="4_choun"]
+[ext_resource type="PackedScene" uid="uid://dkvs3xh6sk5at" path="res://scenes/rm_candle_archive.tscn" id="4_tipki"]
+[ext_resource type="PackedScene" uid="uid://ds4bbsu7wd38g" path="res://scenes/player.tscn" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://clxydowl0kh7b" path="res://scenes/rm_hallway1.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dkjh5igbrml8l" path="res://scenes/rm_hallway2.tscn" id="5_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://domkx0sahmfqo" path="res://scenes/rm_ritual_room.tscn" id="6_eb6dy"]
+[ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
+[ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://d2gs08c1xc1ap" path="res://scenes/camera_2d.gd" id="12_eb6dy"]
+
+[node name="main" type="Node2D"]
+
+[node name="rm_botany_lab" parent="." instance=ExtResource("1_tbgi4")]
+position = Vector2(405, 180)
+
+[node name="rm_testing_lab" parent="." instance=ExtResource("2_tefeu")]
+position = Vector2(410, 900)
+
+[node name="rm_hallway1" parent="." instance=ExtResource("5_tefeu")]
+position = Vector2(1215, 180)
+
+[node name="rm_gemstone_lab" parent="." instance=ExtResource("4_choun")]
+position = Vector2(2025, 180)
+
+[node name="rm_hallway2" parent="." instance=ExtResource("5_ya4ey")]
+position = Vector2(2835, 180)
+
+[node name="rm_ritual_room" parent="." instance=ExtResource("6_eb6dy")]
+position = Vector2(3645, 180)
+
+[node name="rm_hallway3" parent="." instance=ExtResource("7_trceg")]
+position = Vector2(4455, 180)
+
+[node name="rm_library" parent="." instance=ExtResource("3_o6xl0")]
+position = Vector2(5265, 180)
+
+[node name="rm_candle_archive" parent="." instance=ExtResource("4_tipki")]
+position = Vector2(5265, 900)
+
+[node name="Player" parent="." instance=ExtResource("5_85g3d")]
+position = Vector2(202, 224)
+
+[node name="uibordertemp" type="Sprite2D" parent="."]
+position = Vector2(479, 379)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_ya4ey")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(-1, 0)
+anchor_mode = 0
+script = ExtResource("12_eb6dy")
+player = NodePath("../Player")
+size = Vector2i(1080, 720)
