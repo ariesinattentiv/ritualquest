@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkjh5igbrml8l"]
+[gd_scene load_steps=8 format=3 uid="uid://dkjh5igbrml8l"]
 
 [ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_fhjo0"]
 [ext_resource type="Texture2D" uid="uid://bgpyxljhl7n01" path="res://assets/general assets/rooms/hallway 2/final/txd4.jpg" id="1_x1h33"]
+[ext_resource type="Texture2D" uid="uid://d11vswtj2dtsf" path="res://assets/general assets/rooms/hallway 2/final/directory.png" id="3_wuyll"]
+[ext_resource type="Texture2D" uid="uid://bucnc1ax1pcdy" path="res://assets/general assets/rooms/hallway 2/final/fire_extinguisher.png" id="4_y1h3v"]
+[ext_resource type="Texture2D" uid="uid://d4cfijg7xh2q8" path="res://assets/general assets/rooms/hallway 2/final/fluorescent.png" id="5_1t5mi"]
+[ext_resource type="Texture2D" uid="uid://h148hh6w53dw" path="res://assets/general assets/rooms/hallway 2/final/window.png" id="6_1t5mi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
 size = Vector2(810, 38)
@@ -9,7 +13,7 @@ size = Vector2(810, 38)
 [node name="room 1" type="Node2D"]
 
 [node name="bg" type="Sprite2D" parent="."]
-scale = Vector2(0.236, 0.236)
+scale = Vector2(0.236, 0.26)
 texture = ExtResource("1_x1h33")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -24,3 +28,23 @@ shape = SubResource("RectangleShape2D_pcal6")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(6.3, 0.344)
 texture = ExtResource("1_fhjo0")
+
+[node name="Directory" type="Sprite2D" parent="."]
+position = Vector2(-6, 9)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_wuyll")
+
+[node name="FireExtinguisher" type="Sprite2D" parent="."]
+position = Vector2(229, 82)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_y1h3v")
+
+[node name="Fluorescent" type="Sprite2D" parent="."]
+position = Vector2(-2, -174)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("5_1t5mi")
+
+[node name="Window" type="Sprite2D" parent="."]
+position = Vector2(-230.99998, -3)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("6_1t5mi")

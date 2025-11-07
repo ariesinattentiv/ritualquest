@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkvs3xh6sk5at"]
+[gd_scene load_steps=11 format=3 uid="uid://dkvs3xh6sk5at"]
 
 [ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_dbpl5"]
 [ext_resource type="Texture2D" uid="uid://d16n768xuf4uv" path="res://assets/general assets/rooms/archives/final/txd3.jpg" id="1_jmuu2"]
 [ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_ccapj"]
+[ext_resource type="Texture2D" uid="uid://ckc5rhlp1cne0" path="res://assets/general assets/rooms/archives/final/archive_bookcase_1.png" id="4_xqo3v"]
+[ext_resource type="Texture2D" uid="uid://17xtof464ydn" path="res://assets/general assets/rooms/archives/final/archive_bookcase_2.png" id="5_c2bgo"]
+[ext_resource type="Texture2D" uid="uid://b0mh8voij0ma7" path="res://assets/general assets/rooms/archives/final/archive_bookcase_3.png" id="6_qn50b"]
+[ext_resource type="Texture2D" uid="uid://drgjx2pqo72sh" path="res://assets/general assets/rooms/archives/final/desk_with_lamp.png" id="7_a0kt7"]
+[ext_resource type="Texture2D" uid="uid://ca2dpuppydjhc" path="res://assets/general assets/rooms/archives/final/door_1.png" id="8_3egdu"]
+[ext_resource type="Texture2D" uid="uid://bds4l7666bitd" path="res://assets/general assets/rooms/archives/final/picture_frame.png" id="9_d1y4h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
 size = Vector2(810, 38)
@@ -27,7 +33,37 @@ scale = Vector2(6.3, 0.344)
 texture = ExtResource("1_dbpl5")
 
 [node name="DoorE" parent="." instance=ExtResource("2_ccapj")]
-position = Vector2(286, 95.000015)
+position = Vector2(313, 95.000015)
 door_tag = "DoorE"
 destination_room = "rm_library"
 destination_door = "DoorE"
+
+[node name="ArchiveBookcase1" type="Sprite2D" parent="."]
+position = Vector2(-314, 42)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_xqo3v")
+
+[node name="ArchiveBookcase2" type="Sprite2D" parent="."]
+position = Vector2(-182, 26)
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("5_c2bgo")
+
+[node name="ArchiveBookcase3" type="Sprite2D" parent="."]
+position = Vector2(-63.999992, 24.999996)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("6_qn50b")
+
+[node name="DeskWithLamp" type="Sprite2D" parent="."]
+position = Vector2(122.00001, 96)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("7_a0kt7")
+
+[node name="Door1" type="Sprite2D" parent="."]
+position = Vector2(319, 38.999992)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_3egdu")
+
+[node name="PictureFrame" type="Sprite2D" parent="."]
+position = Vector2(121, -71)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_d1y4h")
