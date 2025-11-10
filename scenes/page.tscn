@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw8nkracrhq67"]
+[gd_scene format=3 uid="uid://cw8nkracrhq67"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lufvv"]
-size = Vector2(378.125, 261.5)
-
-[node name="Page" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_lufvv")
+[node name="ReferenceRect" type="ReferenceRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -143.0
+offset_right = 307.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2

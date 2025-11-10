@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dpmdv0r5d65uq"]
+[gd_scene load_steps=19 format=3 uid="uid://dpmdv0r5d65uq"]
 
 [ext_resource type="PackedScene" uid="uid://bxsdb7yq36sev" path="res://scenes/rm_botany_lab.tscn" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cyp2fmpgd13rq" path="res://scenes/rm_testing_lab.tscn" id="2_tefeu"]
@@ -11,9 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://domkx0sahmfqo" path="res://scenes/rm_ritual_room.tscn" id="6_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://d2gs08c1xc1ap" path="res://scenes/camera_2d.gd" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://d2gs08c1xc1ap" path="res://scripts/camera_2d.gd" id="12_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://ctji0mbffcgka" path="res://assets/general assets/ui/book3real.jpg" id="12_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
+[ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="13_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://cw8nkracrhq67" path="res://scenes/page.tscn" id="14_muem4"]
+[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="15_dp3eg"]
 [ext_resource type="AudioStream" uid="uid://caxrk4yhec8k3" path="res://assets/general assets/sound/ambience.mp3" id="15_jkv2x"]
 
 [node name="main" type="Node2D"]
@@ -61,6 +64,38 @@ size = Vector2i(1080, 720)
 position = Vector2(413, 535.5)
 scale = Vector2(0.95934963, 0.9183167)
 texture = ExtResource("12_jkv2x")
+script = ExtResource("13_jbj1t")
+
+[node name="PageSpawn" type="Marker2D" parent="Camera2D/CanvasLayer/bookreal"]
+position = Vector2(-19.804893, 22.088928)
+scale = Vector2(1.0000001, 1)
+
+[node name="ReferenceRect" parent="Camera2D/CanvasLayer/bookreal/PageSpawn" instance=ExtResource("14_muem4")]
+
+[node name="New note" type="TextureButton" parent="Camera2D/CanvasLayer/bookreal"]
+offset_left = -426.33047
+offset_top = -132.3073
+offset_right = -386.33047
+offset_bottom = -92.3073
+texture_normal = ExtResource("15_dp3eg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Prev page" type="TextureButton" parent="Camera2D/CanvasLayer/bookreal"]
+offset_left = -360.0
+offset_right = -320.0
+offset_bottom = 40.0
+texture_normal = ExtResource("15_dp3eg")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Next page" type="TextureButton" parent="Camera2D/CanvasLayer/bookreal"]
+offset_left = 280.0
+offset_right = 320.0
+offset_bottom = 40.0
+texture_normal = ExtResource("15_dp3eg")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="panel" type="Sprite2D" parent="Camera2D/CanvasLayer"]
 position = Vector2(945, 360)
@@ -76,3 +111,7 @@ texture = ExtResource("11_ya4ey")
 stream = ExtResource("15_jkv2x")
 autoplay = true
 parameters/looping = false
+
+[connection signal="pressed" from="Camera2D/CanvasLayer/bookreal/New note" to="Camera2D/CanvasLayer/bookreal" method="_on_new_note_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/bookreal/Prev page" to="Camera2D/CanvasLayer/bookreal" method="_on_previous_page_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/bookreal/Next page" to="Camera2D/CanvasLayer/bookreal" method="_on_next_page_pressed"]

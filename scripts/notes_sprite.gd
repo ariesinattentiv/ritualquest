@@ -11,8 +11,8 @@ var blank_page = preload("res://scenes/page.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in $PageArea.get_children():
-		if i is Area2D:
+	for i in $PageSpawn.get_children():
+		if i is ReferenceRect:
 			pages.append(i)
 	
 	render_page(0)
@@ -44,7 +44,7 @@ func render_page(dest_page:int):
 	# of the page area node, and add it to the list
 	if current_page >= pages.size(): 
 		var new_page = blank_page.instantiate()
-		$PageArea.add_child(new_page)
+		$PageSpawn.add_child(new_page)
 		pages.append(new_page)
 		
 	pages.get(current_page).visible = true

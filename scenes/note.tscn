@@ -34,6 +34,7 @@ theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1bnk6")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_43c4j")
 placeholder_text = "Write a note...."
+wrap_mode = 1
 
 [node name="Drag button" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
