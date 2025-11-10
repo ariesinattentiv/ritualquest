@@ -10,6 +10,6 @@ signal move_player(spawn_pos: Vector2)
 ## [param room]: room from [member Door.destination_room]
 ## [param door]: door from [member Door.destination_door]
 func travel(room,door):
-	var spawn = get_node("../test scene/"+room+"/"+door+"/Spawn") as Marker2D
+	var spawn = get_node("../main/"+room+"/"+door+"/Spawn") as Marker2D
 	var spawn_point = spawn.global_position as Vector2
 	move_player.emit(spawn_point)

@@ -26,6 +26,20 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	play_walk_animation(direction)
+
+func play_walk_animation(direction):
+	# Check if the velocity is zero. If so, stay idle.
+	# If not, check the direction the player is going and play the appropriate walk animation.
+	if direction != 0:
+		if direction > 0:
+			$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.flip_h = false
+		else:
+			$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.play("idle")
 
 ## Moves the player to the target door
 ## Called when [signal NavManager.move_player] signal is emitted

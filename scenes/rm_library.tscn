@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4v1pw52w4nv8"]
+
+[ext_resource type="Texture2D" uid="uid://mv4vfrhey34n" path="res://assets/general assets/rooms/library/final/txd2.jpg" id="1_tm8qa"]
+[ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_rjoje"]
+[ext_resource type="Texture2D" uid="uid://carsyxukorgio" path="res://assets/general assets/rooms/library/final/bookcase_2.png" id="4_2yjlg"]
+[ext_resource type="Texture2D" uid="uid://cigu8h1omrjbu" path="res://assets/general assets/rooms/library/final/bookshelf.png" id="5_o77p3"]
+[ext_resource type="Texture2D" uid="uid://uochc313qncy" path="res://assets/general assets/rooms/library/final/door.png" id="6_ut6gw"]
+[ext_resource type="Texture2D" uid="uid://ix1ak5osd6aj" path="res://assets/general assets/rooms/library/final/shelf.png" id="7_mm4pq"]
+[ext_resource type="PackedScene" uid="uid://c2t6gwualbfqx" path="res://wall.tscn" id="8_2yjlg"]
+[ext_resource type="Texture2D" uid="uid://v85dwn6wwx0n" path="res://assets/general assets/rooms/library/final/table.png" id="8_pg6wv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
+size = Vector2(810, 38)
+
+[node name="room 3" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.221, 0.23)
+texture = ExtResource("1_tm8qa")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_r8opr")
+
+[node name="DoorE" parent="." instance=ExtResource("2_rjoje")]
+position = Vector2(314.00003, 96.00001)
+door_tag = "DoorE"
+destination_room = "rm_candle_archive"
+destination_door = "DoorE"
+
+[node name="Bookcase2" type="Sprite2D" parent="."]
+position = Vector2(138, 46)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_2yjlg")
+
+[node name="Bookshelf" type="Sprite2D" parent="."]
+position = Vector2(-294.00003, 53)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_o77p3")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(324, 43)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("6_ut6gw")
+
+[node name="Shelf" type="Sprite2D" parent="."]
+position = Vector2(-101, -42)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("7_mm4pq")
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(-85, 127)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("8_pg6wv")
+
+[node name="Node2D" parent="." instance=ExtResource("8_2yjlg")]
+position = Vector2(421, -212)
