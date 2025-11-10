@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwt7bdr5mvwry"]
+
+[ext_resource type="Script" uid="uid://dthcflbjxqkyt" path="res://scripts/note.gd" id="1_t3yvt"]
+[ext_resource type="Texture2D" uid="uid://bxctanec18v6j" path="res://assets/placeholder assets/door frames/door3.png" id="2_1bnk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bnk6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43c4j"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 200.0
+offset_bottom = 200.0
+color = Color(0.6692881, 0.6824967, 0.8699466, 1)
+script = ExtResource("1_t3yvt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+mouse_filter = 1
+color = Color(0.4096, 0.4096, 0.64, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+clip_contents = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 196.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_colors/font_placeholder_color = Color(0.92, 0.92, 0.92, 0.85882354)
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1bnk6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_43c4j")
+placeholder_text = "Write a note...."
+
+[node name="Drag button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+mouse_filter = 1
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 178.0
+offset_right = 198.0
+offset_bottom = 198.0
+mouse_filter = 1
+icon = ExtResource("2_1bnk6")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="button_down" from="Drag button" to="." method="_on_drag_button_button_down"]
+[connection signal="button_up" from="Drag button" to="." method="_on_drag_button_button_up"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]

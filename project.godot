@@ -18,14 +18,12 @@ config/icon="res://icon.svg"
 [autoload]
 
 NavManager="*res://scripts/nav_manager.gd"
-Excerpt="*res://scripts/excerpt.gd"
 ResearchNotes="*res://scripts/researchNotes.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/mode="canvas_items"
 
 [editor]
 
