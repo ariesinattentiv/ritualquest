@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkvs3xh6sk5at"]
+[gd_scene load_steps=10 format=3 uid="uid://dkvs3xh6sk5at"]
 
-[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_dbpl5"]
 [ext_resource type="Texture2D" uid="uid://d16n768xuf4uv" path="res://assets/general assets/rooms/archives/final/txd3.jpg" id="1_jmuu2"]
 [ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_ccapj"]
 [ext_resource type="Texture2D" uid="uid://ckc5rhlp1cne0" path="res://assets/general assets/rooms/archives/final/archive_bookcase_1.png" id="4_xqo3v"]
@@ -27,10 +26,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_pcal6")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(6.3, 0.344)
-texture = ExtResource("1_dbpl5")
 
 [node name="DoorE" parent="." instance=ExtResource("2_ccapj")]
 position = Vector2(313, 95.000015)

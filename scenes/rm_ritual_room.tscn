@@ -1,6 +1,5 @@
-[gd_scene load_steps=12 format=3 uid="uid://domkx0sahmfqo"]
+[gd_scene load_steps=11 format=3 uid="uid://domkx0sahmfqo"]
 
-[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_2b2pd"]
 [ext_resource type="Texture2D" uid="uid://com0euj8k4eox" path="res://assets/general assets/rooms/ritual chamber/final/txd6.jpg" id="1_omh1l"]
 [ext_resource type="Texture2D" uid="uid://b4bugxhv6wue1" path="res://assets/general assets/rooms/ritual chamber/final/dais.png" id="3_uqjig"]
 [ext_resource type="Texture2D" uid="uid://6txpxn2fdjl" path="res://assets/general assets/rooms/ritual chamber/final/tapestry_1.png" id="4_jss1h"]
@@ -28,10 +27,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_pcal6")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(6.3, 0.344)
-texture = ExtResource("1_2b2pd")
 
 [node name="Dais" type="Sprite2D" parent="."]
 position = Vector2(-5, 137)

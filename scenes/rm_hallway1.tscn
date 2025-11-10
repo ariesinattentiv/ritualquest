@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://clxydowl0kh7b"]
+[gd_scene load_steps=8 format=3 uid="uid://clxydowl0kh7b"]
 
 [ext_resource type="Texture2D" uid="uid://ccr3ikpigo3o3" path="res://assets/general assets/rooms/hallway 1/final/txd7.jpg" id="1_c3tkl"]
-[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="1_na1in"]
 [ext_resource type="Texture2D" uid="uid://ceh5ngxhk34fc" path="res://assets/general assets/rooms/hallway 1/final/directory.png" id="3_nv2ym"]
 [ext_resource type="Texture2D" uid="uid://gwa4n6ka555h" path="res://assets/general assets/rooms/hallway 1/final/fluorescent.png" id="4_wclii"]
 [ext_resource type="Texture2D" uid="uid://hs0sb0fo5m4p" path="res://assets/general assets/rooms/hallway 1/final/fluorescent_2.png" id="5_wclii"]
@@ -25,10 +24,6 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_pcal6")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(6.3, 0.344)
-texture = ExtResource("1_na1in")
 
 [node name="Directory" type="Sprite2D" parent="."]
 position = Vector2(-3, 19.000004)

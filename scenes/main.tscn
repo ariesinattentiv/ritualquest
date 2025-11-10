@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dpmdv0r5d65uq"]
+[gd_scene load_steps=16 format=3 uid="uid://dpmdv0r5d65uq"]
 
 [ext_resource type="PackedScene" uid="uid://bxsdb7yq36sev" path="res://scenes/rm_botany_lab.tscn" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cyp2fmpgd13rq" path="res://scenes/rm_testing_lab.tscn" id="2_tefeu"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d2gs08c1xc1ap" path="res://scenes/camera_2d.gd" id="12_eb6dy"]
+[ext_resource type="Texture2D" uid="uid://ctji0mbffcgka" path="res://assets/general assets/ui/book3real.jpg" id="12_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
+[ext_resource type="AudioStream" uid="uid://caxrk4yhec8k3" path="res://assets/general assets/sound/ambience.mp3" id="15_jkv2x"]
 
 [node name="main" type="Node2D"]
 
@@ -19,7 +22,7 @@
 position = Vector2(405, 180)
 
 [node name="rm_testing_lab" parent="." instance=ExtResource("2_tefeu")]
-position = Vector2(410, 900)
+position = Vector2(404, 900)
 
 [node name="rm_hallway1" parent="." instance=ExtResource("5_tefeu")]
 position = Vector2(1215, 180)
@@ -45,14 +48,31 @@ position = Vector2(5265, 900)
 [node name="Player" parent="." instance=ExtResource("5_85g3d")]
 position = Vector2(202, 224)
 
-[node name="uibordertemp" type="Sprite2D" parent="."]
-position = Vector2(479, 379)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("11_ya4ey")
-
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-1, 0)
 anchor_mode = 0
 script = ExtResource("12_eb6dy")
 player = NodePath("../Player")
 size = Vector2i(1080, 720)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="bookreal" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(413, 535.5)
+scale = Vector2(0.95934963, 0.9183167)
+texture = ExtResource("12_jkv2x")
+
+[node name="panel" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(945, 360)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_a8y0u")
+
+[node name="uiborder" type="Sprite2D" parent="Camera2D/CanvasLayer"]
+position = Vector2(479, 390.00003)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_ya4ey")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_jkv2x")
+autoplay = true
+parameters/looping = false
