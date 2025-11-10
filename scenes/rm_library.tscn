@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4v1pw52w4nv8"]
+[gd_scene load_steps=10 format=3 uid="uid://b4v1pw52w4nv8"]
 
 [ext_resource type="Texture2D" uid="uid://mv4vfrhey34n" path="res://assets/general assets/rooms/library/final/txd2.jpg" id="1_tm8qa"]
 [ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="2_rjoje"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cigu8h1omrjbu" path="res://assets/general assets/rooms/library/final/bookshelf.png" id="5_o77p3"]
 [ext_resource type="Texture2D" uid="uid://uochc313qncy" path="res://assets/general assets/rooms/library/final/door.png" id="6_ut6gw"]
 [ext_resource type="Texture2D" uid="uid://ix1ak5osd6aj" path="res://assets/general assets/rooms/library/final/shelf.png" id="7_mm4pq"]
+[ext_resource type="PackedScene" uid="uid://c2t6gwualbfqx" path="res://wall.tscn" id="8_2yjlg"]
 [ext_resource type="Texture2D" uid="uid://v85dwn6wwx0n" path="res://assets/general assets/rooms/library/final/table.png" id="8_pg6wv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
@@ -56,3 +57,6 @@ texture = ExtResource("7_mm4pq")
 position = Vector2(-85, 127)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("8_pg6wv")
+
+[node name="Node2D" parent="." instance=ExtResource("8_2yjlg")]
+position = Vector2(421, -212)

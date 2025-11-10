@@ -16,5 +16,5 @@ func _physics_process(_delta) -> void:
 # This is calculated by taking the player's position onscreen divided by the viewport,
 # this is then multiplied by the size of the camera itself.
 func update_position() -> void:
-	var current_cell: Vector2i = Vector2i(player.global_position) / size
-	global_position = current_cell * size
+	var current_cell: Vector2i = Vector2i(player.global_position) / 810
+	global_position = current_cell * 810

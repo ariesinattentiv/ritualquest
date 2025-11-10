@@ -22,7 +22,7 @@
 position = Vector2(405, 180)
 
 [node name="rm_testing_lab" parent="." instance=ExtResource("2_tefeu")]
-position = Vector2(404, 900)
+position = Vector2(404, 990)
 
 [node name="rm_hallway1" parent="." instance=ExtResource("5_tefeu")]
 position = Vector2(1215, 180)
@@ -43,7 +43,7 @@ position = Vector2(4455, 180)
 position = Vector2(5265, 180)
 
 [node name="rm_candle_archive" parent="." instance=ExtResource("4_tipki")]
-position = Vector2(5265, 900)
+position = Vector2(5265, 990)
 
 [node name="Player" parent="." instance=ExtResource("5_85g3d")]
 position = Vector2(202, 224)
