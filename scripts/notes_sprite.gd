@@ -2,6 +2,7 @@ extends Node2D
 
 var pages = []
 @onready var current_page = 0
+@onready var display_number = 1
 
 var last_page
 
@@ -21,6 +22,7 @@ func _ready() -> void:
 func _on_next_page_pressed() -> void:
 	last_page = pages.get(current_page)
 	var i = current_page + 1 # Adjust current page
+	display_number += 2
 	render_page(i)# call render page
 
 
@@ -29,6 +31,7 @@ func _on_previous_page_pressed() -> void:
 		pass
 	else:
 		var i = current_page - 1
+		display_number -= 2
 		render_page(i) # call render page
 
 
@@ -48,6 +51,8 @@ func render_page(dest_page:int):
 		pages.append(new_page)
 		
 	pages.get(current_page).visible = true
+	$PageNumLeft.text = str(display_number)
+	$PageNumRight.text = str(display_number + 1)
 	
 	
 
