@@ -24,7 +24,7 @@ texture = ExtResource("1_myxwj")
 script = ExtResource("2_myxwj")
 
 [node name="Next page" type="TextureButton" parent="Sprite2D"]
-offset_left = 133.59383
+offset_left = 128.50002
 offset_top = -31.583427
 offset_right = 144.92049
 offset_bottom = 6.1577682
@@ -40,10 +40,11 @@ texture_normal = ExtResource("4_bq8ns")
 stretch_mode = 0
 
 [node name="New note" type="Button" parent="Sprite2D"]
-offset_left = -202.32234
-offset_top = -78.46197
-offset_right = -184.8469
-offset_bottom = -58.200905
+offset_left = -203.0
+offset_top = -79.5
+offset_right = -186.0
+offset_bottom = -55.5
+theme_override_font_sizes/font_size = 11
 text = "+"
 
 [node name="PageArea" type="Area2D" parent="Sprite2D"]
@@ -56,6 +57,7 @@ offset_left = -183.97379
 offset_top = -114.569534
 offset_right = -22.51654
 offset_bottom = -29.139061
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "This is placeholder text for pre-built notes there will be some text and photos here"
 autowrap_mode = 3
@@ -73,6 +75,7 @@ offset_left = -176.15895
 offset_top = 60.264904
 offset_right = -26.490067
 offset_bottom = 135.26491
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 text = "lots more text for  more notes ehehehe"
 autowrap_mode = 3
