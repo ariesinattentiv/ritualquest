@@ -7,11 +7,14 @@ var pages = []
 var last_page
 
 var note_scene = preload("res://scenes/note.tscn")
+var notepic_scene = preload("res://scenes/notepic.tscn")
 var blank_page = preload("res://scenes/page.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SignalHub.pin.connect(add_img_to_notes)
+
 	for i in $PageSpawn.get_children():
 		if i is ReferenceRect:
 			pages.append(i)
@@ -63,3 +66,9 @@ func _on_new_note_pressed() -> void:
 	pages.get(current_page).add_child(new_note)
 	new_note.position = Vector2(40,40)
 	$AudioStreamPlayer.play()
+
+func add_img_to_notes(img: Sprite2D):
+	var new_pic = notepic_scene.instantiate()
+	new_pic.get_node("TextureRect").set_texture(img.get_texture())
+	pages.get(current_page).add_child(new_pic)
+	new_pic.position = Vector2(40,40)
