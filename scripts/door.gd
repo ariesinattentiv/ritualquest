@@ -31,7 +31,7 @@ func _ready() -> void:
 ## the [member Door.destination_room] and [member Door.destination_door] properties from the given door.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_colliding == true:
-		NavManager.travel(destination_room,destination_door)
+		SignalHub.travel(destination_room,destination_door)
 
 
 ## When player enters CollisionShape2D of door, the
