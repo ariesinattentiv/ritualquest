@@ -24,6 +24,7 @@ func _on_next_page_pressed() -> void:
 	var i = current_page + 1 # Adjust current page
 	display_number += 2
 	render_page(i)# call render page
+	$AudioStreamPlayer.play()
 
 
 func _on_previous_page_pressed() -> void:
@@ -33,6 +34,7 @@ func _on_previous_page_pressed() -> void:
 		var i = current_page - 1
 		display_number -= 2
 		render_page(i) # call render page
+		$AudioStreamPlayer.play()
 
 
 
@@ -60,3 +62,4 @@ func _on_new_note_pressed() -> void:
 	var new_note = note_scene.instantiate()
 	pages.get(current_page).add_child(new_note)
 	new_note.position = Vector2(40,40)
+	$AudioStreamPlayer.play()

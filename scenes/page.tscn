@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cw8nkracrhq67"]
+[gd_scene load_steps=0 format=3 uid="uid://cw8nkracrhq67"]
 
 [node name="ReferenceRect" type="ReferenceRect"]
 anchors_preset = 8

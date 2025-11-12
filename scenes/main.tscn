@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dpmdv0r5d65uq"]
+[gd_scene load_steps=23 format=3 uid="uid://dpmdv0r5d65uq"]
 
 [ext_resource type="PackedScene" uid="uid://bxsdb7yq36sev" path="res://scenes/rm_botany_lab.tscn" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cyp2fmpgd13rq" path="res://scenes/rm_testing_lab.tscn" id="2_tefeu"]
@@ -11,14 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://domkx0sahmfqo" path="res://scenes/rm_ritual_room.tscn" id="6_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
 [ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://d2gs08c1xc1ap" path="res://scripts/camera_2d.gd" id="12_eb6dy"]
+[ext_resource type="Script" uid="uid://da4yfugt6kwkl" path="res://scenes/camera_2d.gd" id="12_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://ctji0mbffcgka" path="res://assets/general assets/ui/book3real.jpg" id="12_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="13_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cw8nkracrhq67" path="res://scenes/page.tscn" id="14_muem4"]
-[ext_resource type="Texture2D" uid="uid://drtomqhlidwgw" path="res://icon.svg" id="15_dp3eg"]
 [ext_resource type="AudioStream" uid="uid://caxrk4yhec8k3" path="res://assets/general assets/sound/ambience.mp3" id="15_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://b8rx3o13m8w0n" path="res://assets/general assets/ui2/plus.png" id="15_yc10j"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="16_0ld40"]
+[ext_resource type="Texture2D" uid="uid://ckrfpbbpu0yi4" path="res://assets/general assets/ui2/left.png" id="16_jscy8"]
+[ext_resource type="Texture2D" uid="uid://cu7xofngpm1ti" path="res://assets/general assets/ui2/right.png" id="17_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://dgj4gtgc1biqg" path="res://assets/sounds/Page Turn Sound Effect.mp3" id="19_jscy8"]
 
 [node name="main" type="Node2D"]
 
@@ -77,24 +80,26 @@ scale = Vector2(1.0000001, 1)
 offset_left = -426.33047
 offset_top = -132.3073
 offset_right = -386.33047
-offset_bottom = -92.3073
-texture_normal = ExtResource("15_dp3eg")
+offset_bottom = -80.037735
+texture_normal = ExtResource("15_yc10j")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Prev page" type="TextureButton" parent="Camera2D/CanvasLayer/bookreal"]
-offset_left = -360.0
-offset_right = -320.0
-offset_bottom = 40.0
-texture_normal = ExtResource("15_dp3eg")
+offset_left = -362.74573
+offset_top = -7.0781684
+offset_right = -322.74573
+offset_bottom = 55.536457
+texture_normal = ExtResource("16_jscy8")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Next page" type="TextureButton" parent="Camera2D/CanvasLayer/bookreal"]
-offset_left = 280.0
-offset_right = 320.0
-offset_bottom = 40.0
-texture_normal = ExtResource("15_dp3eg")
+offset_left = 285.61014
+offset_top = -3.8113213
+offset_right = 325.61014
+offset_bottom = 56.625385
+texture_normal = ExtResource("17_pm3ni")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -120,6 +125,10 @@ theme_override_font_sizes/font_size = 22
 text = "1"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Camera2D/CanvasLayer/bookreal"]
+stream = ExtResource("19_jscy8")
+volume_db = -8.044
+
 [node name="panel" type="Sprite2D" parent="Camera2D/CanvasLayer"]
 position = Vector2(945, 360)
 scale = Vector2(0.25, 0.25)
@@ -133,7 +142,7 @@ texture = ExtResource("11_ya4ey")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_jkv2x")
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/bookreal/New note" to="Camera2D/CanvasLayer/bookreal" method="_on_new_note_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/bookreal/Prev page" to="Camera2D/CanvasLayer/bookreal" method="_on_previous_page_pressed"]
