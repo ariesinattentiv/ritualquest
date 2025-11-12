@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dkjh5igbrml8l" path="res://scenes/rm_hallway2.tscn" id="5_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://domkx0sahmfqo" path="res://scenes/rm_ritual_room.tscn" id="6_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
+[ext_resource type="Script" uid="uid://da4yfugt6kwkl" path="res://scripts/camera_2d.gd" id="11_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
-[ext_resource type="Script" uid="uid://da4yfugt6kwkl" path="res://scenes/camera_2d.gd" id="12_eb6dy"]
 [ext_resource type="Texture2D" uid="uid://ctji0mbffcgka" path="res://assets/general assets/ui/book3real.jpg" id="12_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="13_jbj1t"]
@@ -58,7 +58,7 @@ position = Vector2(202, 224)
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(-1, 0)
 anchor_mode = 0
-script = ExtResource("12_eb6dy")
+script = ExtResource("11_jscy8")
 player = NodePath("../Player")
 size = Vector2i(1080, 720)
 

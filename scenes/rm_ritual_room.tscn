@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://35vxyf2le0v4" path="res://assets/general assets/rooms/ritual chamber/final/deer.png" id="8_cxg3u"]
 [ext_resource type="Texture2D" uid="uid://b0ccx261jvq2l" path="res://assets/general assets/rooms/ritual chamber/final/snake_1.png" id="9_cxg3u"]
 [ext_resource type="Texture2D" uid="uid://dxkqmvxskkeij" path="res://assets/general assets/rooms/ritual chamber/final/snake_2.png" id="10_gcqyi"]
-[ext_resource type="Script" uid="uid://dsuruxv37robm" path="res://scenes/musicplayer.gd" id="10_lmvk4"]
+[ext_resource type="Script" uid="uid://dsuruxv37robm" path="res://scripts/musicplayer.gd" id="10_lmvk4"]
 [ext_resource type="AudioStream" uid="uid://e332ra117m0e" path="res://assets/general assets/sound/uptempo.mp3" id="11_282ga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]

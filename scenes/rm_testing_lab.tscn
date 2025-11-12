@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ddsrm1dju0bgn" path="res://assets/general assets/rooms/testing lab/final/candle_bookcase.png" id="4_eppih"]
 [ext_resource type="Texture2D" uid="uid://m0laa1uypd73" path="res://assets/general assets/rooms/testing lab/final/candle_table.png" id="5_s2r5i"]
 [ext_resource type="Texture2D" uid="uid://b81l6548gjr3y" path="res://assets/general assets/rooms/testing lab/final/clock.png" id="6_y40y2"]
-[ext_resource type="PackedScene" uid="uid://c2t6gwualbfqx" path="res://wall.tscn" id="7_eppih"]
+[ext_resource type="PackedScene" uid="uid://c2t6gwualbfqx" path="res://scenes/wall.tscn" id="7_eppih"]
 [ext_resource type="Texture2D" uid="uid://b656jnjedroe" path="res://assets/general assets/rooms/testing lab/final/door.png" id="7_lany4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r8opr"]
