@@ -24,6 +24,7 @@ ResearchNotes="*res://scripts/researchNotes.gd"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [editor]
 
