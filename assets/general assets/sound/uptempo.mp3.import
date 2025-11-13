@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e332ra117m0e"
+path="res://.godot/imported/uptempo.mp3-8f4c909a77f870df06b8acfe3f1dfa18.mp3str"
+
+[deps]
+
+source_file="res://assets/general assets/sound/uptempo.mp3"
+dest_files=["res://.godot/imported/uptempo.mp3-8f4c909a77f870df06b8acfe3f1dfa18.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

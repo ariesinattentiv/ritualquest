@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://clxydowl0kh7b"]
+
+[ext_resource type="Texture2D" uid="uid://ccr3ikpigo3o3" path="res://assets/general assets/rooms/hallway 1/final/txd7.jpg" id="1_c3tkl"]
+[ext_resource type="Texture2D" uid="uid://ceh5ngxhk34fc" path="res://assets/general assets/rooms/hallway 1/final/directory.png" id="3_nv2ym"]
+[ext_resource type="Texture2D" uid="uid://gwa4n6ka555h" path="res://assets/general assets/rooms/hallway 1/final/fluorescent.png" id="4_wclii"]
+[ext_resource type="Texture2D" uid="uid://hs0sb0fo5m4p" path="res://assets/general assets/rooms/hallway 1/final/fluorescent_2.png" id="5_wclii"]
+[ext_resource type="Texture2D" uid="uid://br4o5nv3084da" path="res://assets/general assets/rooms/hallway 1/final/window_1.png" id="6_gmemu"]
+[ext_resource type="Texture2D" uid="uid://dbnl00waofd1b" path="res://assets/general assets/rooms/hallway 1/final/window_2.png" id="7_kiuop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
+size = Vector2(810, 38)
+
+[node name="room 1" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.253, 0.253)
+texture = ExtResource("1_c3tkl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_pcal6")
+
+[node name="Directory" type="Sprite2D" parent="."]
+position = Vector2(-3, 19.000004)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_nv2ym")
+
+[node name="Fluorescent" type="Sprite2D" parent="."]
+position = Vector2(-191, -177)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_wclii")
+
+[node name="Fluorescent2" type="Sprite2D" parent="."]
+position = Vector2(212, -163)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_wclii")
+
+[node name="Window1" type="Sprite2D" parent="."]
+position = Vector2(-219, -1)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("6_gmemu")
+
+[node name="Window2" type="Sprite2D" parent="."]
+position = Vector2(219, -1)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("7_kiuop")

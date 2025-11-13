@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxsdb7yq36sev"]
+
+[ext_resource type="Texture2D" uid="uid://c5t5t2kamm58y" path="res://assets/general assets/rooms/botany lab/final/txd8.jpg" id="1_x1n0s"]
+[ext_resource type="Texture2D" uid="uid://ctuqi860862cw" path="res://assets/general assets/rooms/botany lab/final/door_2.png" id="3_57k2a"]
+[ext_resource type="PackedScene" uid="uid://b8tlgw2b0v0mq" path="res://scenes/door.tscn" id="3_irjyx"]
+[ext_resource type="Texture2D" uid="uid://45rwsa3t42kj" path="res://assets/general assets/rooms/botany lab/final/hanging_plant.png" id="4_xrng0"]
+[ext_resource type="Texture2D" uid="uid://bxlu42vupl048" path="res://assets/general assets/rooms/botany lab/final/hanging_vines.png" id="5_e7irl"]
+[ext_resource type="Texture2D" uid="uid://dsqht5m2mna5l" path="res://assets/general assets/rooms/botany lab/final/table_with_plants_1.png" id="6_ot1kh"]
+[ext_resource type="Script" uid="uid://be1nxlvf1w32v" path="res://scripts/InteractableObject.gd" id="7_e7irl"]
+[ext_resource type="Texture2D" uid="uid://brus8j213gmuc" path="res://assets/general assets/rooms/botany lab/final/table_with_plants_2.png" id="7_th2b0"]
+[ext_resource type="PackedScene" uid="uid://c2t6gwualbfqx" path="res://wall.tscn" id="8_xrng0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
+size = Vector2(810, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrng0"]
+size = Vector2(2175.0005, 908.3334)
+
+[node name="room 1" type="Node2D"]
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.306, 0.306)
+texture = ExtResource("1_x1n0s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 180)
+collision_layer = 2
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_pcal6")
+
+[node name="DoorW" parent="." instance=ExtResource("3_irjyx")]
+position = Vector2(-328, 102)
+door_tag = "DoorW"
+destination_room = "rm_testing_lab"
+destination_door = "DoorW"
+
+[node name="Door2" type="Sprite2D" parent="."]
+position = Vector2(-311, 35)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_57k2a")
+
+[node name="HangingPlant" type="Sprite2D" parent="."]
+position = Vector2(2, -81)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_xrng0")
+
+[node name="HangingVines" type="Sprite2D" parent="."]
+position = Vector2(80, -160)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("5_e7irl")
+
+[node name="TableWithPlants1" type="Sprite2D" parent="."]
+position = Vector2(-39, 89.00001)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_ot1kh")
+
+[node name="InteractionArea" type="Area2D" parent="TableWithPlants1"]
+position = Vector2(-83.33334, 300)
+script = ExtResource("7_e7irl")
+object_name = "Table"
+info_text = "No \"A table with strange plants and ritual tools. Some pots glow faintly.\" yet."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TableWithPlants1/InteractionArea"]
+position = Vector2(104.16666, -79.16724)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_xrng0")
+
+[node name="Prompt" type="Label" parent="TableWithPlants1/InteractionArea"]
+offset_left = -758.3333
+offset_top = -400.00003
+offset_right = 158.33331
+offset_bottom = -123.00003
+theme_override_font_sizes/font_size = 100
+text = "Press E to interact
+"
+
+[node name="TableWithPlants2" type="Sprite2D" parent="."]
+position = Vector2(257, 90)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_th2b0")
+
+[node name="Node2D" parent="." instance=ExtResource("8_xrng0")]
+position = Vector2(-423, -171)
