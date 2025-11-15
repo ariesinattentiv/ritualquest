@@ -9,7 +9,7 @@ const JUMP_VELOCITY = -400.0
 ## from nav_manager script, so [method Player.change_rooms] is called when the [signal NavManager.move_player]
 ## signal is emitted
 func _ready():
-	SignalHub.move_player.connect(change_rooms)
+	NavManager.move_player.connect(change_rooms)
 
 
 func _physics_process(delta: float) -> void:

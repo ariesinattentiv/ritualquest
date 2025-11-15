@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://domkx0sahmfqo"]
+[gd_scene load_steps=11 format=3 uid="uid://domkx0sahmfqo"]
 
 [ext_resource type="Texture2D" uid="uid://com0euj8k4eox" path="res://assets/general assets/rooms/ritual chamber/final/txd6.jpg" id="1_omh1l"]
 [ext_resource type="Texture2D" uid="uid://b4bugxhv6wue1" path="res://assets/general assets/rooms/ritual chamber/final/dais.png" id="3_uqjig"]
@@ -9,14 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://35vxyf2le0v4" path="res://assets/general assets/rooms/ritual chamber/final/deer.png" id="8_cxg3u"]
 [ext_resource type="Texture2D" uid="uid://b0ccx261jvq2l" path="res://assets/general assets/rooms/ritual chamber/final/snake_1.png" id="9_cxg3u"]
 [ext_resource type="Texture2D" uid="uid://dxkqmvxskkeij" path="res://assets/general assets/rooms/ritual chamber/final/snake_2.png" id="10_gcqyi"]
-[ext_resource type="Script" uid="uid://dsuruxv37robm" path="res://scripts/musicplayer.gd" id="10_lmvk4"]
-[ext_resource type="AudioStream" uid="uid://e332ra117m0e" path="res://assets/general assets/sound/uptempo.mp3" id="11_282ga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcal6"]
 size = Vector2(810, 38)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xga3"]
-size = Vector2(804, 125)
 
 [node name="room 1" type="Node2D"]
 
@@ -72,17 +67,3 @@ texture = ExtResource("9_cxg3u")
 position = Vector2(322, -57)
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("10_gcqyi")
-
-[node name="musicplayer" type="Area2D" parent="."]
-script = ExtResource("10_lmvk4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="musicplayer"]
-position = Vector2(0, 65.5)
-shape = SubResource("RectangleShape2D_5xga3")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="musicplayer"]
-stream = ExtResource("11_282ga")
-volume_db = -17.812
-
-[connection signal="body_entered" from="musicplayer" to="musicplayer" method="_on_body_entered"]
-[connection signal="body_exited" from="musicplayer" to="musicplayer" method="_on_body_exited"]
