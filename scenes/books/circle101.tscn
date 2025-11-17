@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bsn0vmvj4rgnm"]
 
 [ext_resource type="Texture2D" uid="uid://bhciibcltplnd" path="res://assets/general assets/ui/bookreal.jpg" id="1_8mrqe"]
-[ext_resource type="Script" uid="uid://d2qvc7po536pv" path="res://scenes/books/readable_book.gd" id="1_sr6wr"]
+[ext_resource type="Script" uid="uid://d2qvc7po536pv" path="res://scripts/readable_book.gd" id="1_sr6wr"]
 [ext_resource type="Texture2D" uid="uid://ckrfpbbpu0yi4" path="res://assets/general assets/ui2/left.png" id="2_sr6wr"]
 [ext_resource type="Texture2D" uid="uid://cu7xofngpm1ti" path="res://assets/general assets/ui2/right.png" id="3_mkgc7"]
 [ext_resource type="Texture2D" uid="uid://dnpnqfd6evopv" path="res://assets/general assets/ui/i1.png" id="4_0ulgv"]
-[ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/general assets/magic circles/demon middle.png" id="5_40n5q"]
+[ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/magic circles/demon middle.png" id="5_40n5q"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="6_6v046"]
 
 [node name="circle 101" type="Node2D"]
