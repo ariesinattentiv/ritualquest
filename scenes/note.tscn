@@ -12,6 +12,8 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixjtm"]
 
 [node name="ColorRect" type="ColorRect"]
+z_index = 1025
+z_as_relative = false
 offset_right = 200.0
 offset_bottom = 200.0
 color = Color(0.6692881, 0.6824967, 0.8699466, 1)
@@ -23,7 +25,6 @@ scale = Vector2(0.8222222, 0.8361111)
 texture = ExtResource("2_njo4t")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-z_index = 99
 layout_mode = 0
 offset_left = 5.0
 offset_top = 13.0

@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dragging:
 		var current_mouse_pos = get_viewport().get_mouse_position()
 		var mouse_delta = current_mouse_pos - prev_mouse_pos
@@ -37,3 +37,8 @@ func _on_mouse_exited() -> void:
 func _on_delete_pressed() -> void:
 	print("delete pressed")
 	self.queue_free()
+
+
+func _input(event:InputEvent):
+	if (has_focus() and event is InputEventMouseButton and not get_global_rect().has_point(event.position)):
+		release_focus()

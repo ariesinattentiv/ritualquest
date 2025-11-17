@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var prompt_text := "Press E to interact"
+@export_multiline var prompt_text := "Press E to interact"
 @export var object_name := "Object"
 @export var info_text := "No description yet."
 
@@ -35,6 +35,7 @@ func _on_body_exited(body: Node) -> void:
 func _process(_dt: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		_send_show_info(info_text)
+		SignalHub.handle_interaction(object_name)
 
 func _send_show_info(text: String) -> void:
 	var ui := get_tree().get_first_node_in_group("ObjectInfoUI")

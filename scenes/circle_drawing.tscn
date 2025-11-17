@@ -1,0 +1,263 @@
+[gd_scene load_steps=10 format=3 uid="uid://o3hfh3fo5ue2"]
+
+[ext_resource type="Texture2D" uid="uid://c6l8j42cfpbkb" path="res://assets/general assets/ui2/note.png" id="1_n2gqn"]
+[ext_resource type="Texture2D" uid="uid://sje763op8dio" path="res://assets/general assets/ending/explosion4.jpg" id="1_v876a"]
+[ext_resource type="Texture2D" uid="uid://b81l6548gjr3y" path="res://assets/general assets/rooms/testing lab/final/clock.png" id="2_ryesw"]
+[ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="3_mxf0x"]
+[ext_resource type="Texture2D" uid="uid://dxjq6kccrwddk" path="res://assets/general assets/magic circles/protection circle base.png" id="4_cgoam"]
+[ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/general assets/magic circles/demon middle.png" id="5_ryesw"]
+[ext_resource type="Texture2D" uid="uid://c1u2p6pixaroc" path="res://assets/general assets/magic circles/sprite middle.png" id="6_cgoam"]
+[ext_resource type="Texture2D" uid="uid://c7klghyccvxtc" path="res://assets/general assets/magic circles/angel middle.png" id="7_ryesw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg1fr"]
+bg_color = Color(0.60969996, 0.64487505, 0.67, 0.39607844)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.47520003, 0.51408, 0.54, 1)
+
+[node name="Circle drawing" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -405.0
+offset_top = -180.0
+offset_right = 405.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 0.35100004, 0.81, 0.8509804)
+self_modulate = Color(1, 1, 1, 0.8392157)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -200.0
+offset_right = 430.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_v876a")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -187.0
+offset_right = 257.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ryesw")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+modulate = Color(0.56, 0.56, 0.56, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -237.0
+offset_right = 436.0
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n2gqn")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect2"]
+modulate = Color(0.65, 0.65, 0.65, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -334.0
+offset_right = 459.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.9721484
+texture = ExtResource("1_n2gqn")
+expand_mode = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+offset_left = 42.0
+offset_top = -14.0
+offset_right = 288.0
+offset_bottom = 391.0
+texture = ExtResource("1_n2gqn")
+patch_margin_left = 116
+patch_margin_top = 100
+patch_margin_right = 130
+patch_margin_bottom = 100
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = 555.0
+offset_top = -13.0
+offset_right = 775.0
+offset_bottom = 387.0
+texture = ExtResource("1_n2gqn")
+region_rect = Rect2(0, 0, 360, 360)
+patch_margin_left = 100
+patch_margin_top = 140
+patch_margin_right = 120
+patch_margin_bottom = 160
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.5
+offset_top = -165.0
+offset_right = 332.5
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Circle select" type="TabContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(155, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/tab_separation = 0
+theme_override_constants/icon_separation = 2
+theme_override_fonts/font = ExtResource("3_mxf0x")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_xg1fr")
+tab_alignment = 1
+current_tab = 1
+tabs_position = 1
+clip_tabs = false
+tab_focus_mode = 1
+
+[node name="Outer" type="ItemList" parent="MarginContainer/HBoxContainer/Circle select"]
+visible = false
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/v_separation = 4
+theme_override_constants/outline_size = 0
+theme_override_constants/icon_margin = 0
+theme_override_fonts/font = ExtResource("3_mxf0x")
+theme_override_font_sizes/font_size = 12
+item_count = 1
+icon_mode = 0
+icon_scale = 0.135
+item_0/icon = ExtResource("4_cgoam")
+metadata/_tab_index = 0
+
+[node name="Middle" type="ItemList" parent="MarginContainer/HBoxContainer/Circle select"]
+use_parent_material = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_mxf0x")
+theme_override_font_sizes/font_size = 1
+item_count = 3
+icon_scale = 0.135
+item_0/text = "demon"
+item_0/icon = ExtResource("5_ryesw")
+item_1/text = "sprite"
+item_1/icon = ExtResource("6_cgoam")
+item_2/text = "angel"
+item_2/icon = ExtResource("7_ryesw")
+metadata/_tab_index = 1
+
+[node name="Inner" type="ItemList" parent="MarginContainer/HBoxContainer/Circle select"]
+visible = false
+use_parent_material = true
+layout_mode = 2
+theme_override_constants/v_separation = 4
+theme_override_constants/outline_size = 0
+theme_override_constants/icon_margin = 0
+theme_override_fonts/font = ExtResource("3_mxf0x")
+theme_override_font_sizes/font_size = 12
+item_count = 1
+icon_mode = 0
+icon_scale = 0.135
+metadata/_tab_index = 2
+
+[node name="Circles" type="Control" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+
+[node name="Cardinal" type="TextureRect" parent="MarginContainer/HBoxContainer/Circles"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.5
+offset_top = -163.5
+offset_right = 163.5
+offset_bottom = 163.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cgoam")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Circles/Cardinal"]
+layout_mode = 0
+offset_left = 146.5
+offset_top = 7.5
+offset_right = 181.5
+offset_bottom = 41.5
+
+[node name="Demon middle" type="TextureRect" parent="MarginContainer/HBoxContainer/Circles"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -103.5
+offset_right = 128.0
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ryesw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Items" type="ItemList" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+allow_search = false
+icon_mode = 0
+icon_scale = 0.1

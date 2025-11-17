@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://cctw8m34a4b1f"]
+
+[ext_resource type="Texture2D" uid="uid://cigu8h1omrjbu" path="res://assets/general assets/rooms/library/final/bookshelf.png" id="1_7ue8p"]
+[ext_resource type="Texture2D" uid="uid://17xtof464ydn" path="res://assets/general assets/rooms/archives/final/archive_bookcase_2.png" id="2_c1t0j"]
+[ext_resource type="Texture2D" uid="uid://b0mh8voij0ma7" path="res://assets/general assets/rooms/archives/final/archive_bookcase_3.png" id="3_dmqdl"]
+[ext_resource type="Script" uid="uid://b7fc02owk2agm" path="res://scripts/shelfbook.gd" id="3_ga7wk"]
+[ext_resource type="Texture2D" uid="uid://ca2dpuppydjhc" path="res://assets/general assets/rooms/archives/final/door_1.png" id="4_uwj02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5at8"]
+size = Vector2(454.01813, 1043.5996)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utyjt"]
+size = Vector2(87.62842, 258.27322)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jio4l"]
+size = Vector2(55, 239.99998)
+
+[node name="bookshelf" type="Node2D"]
+
+[node name="shelf" type="Sprite2D" parent="."]
+position = Vector2(551, 824)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("1_7ue8p")
+
+[node name="book1" type="Area2D" parent="shelf"]
+position = Vector2(-217.91808, -532.68854)
+scale = Vector2(0.29458883, 0.29388613)
+script = ExtResource("3_ga7wk")
+title = "Magic Circle 101"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="shelf/book1"]
+texture = ExtResource("2_c1t0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/book1"]
+position = Vector2(-23.484009, 0)
+shape = SubResource("RectangleShape2D_s5at8")
+
+[node name="book2" type="Area2D" parent="shelf"]
+position = Vector2(-104.92358, -507.32245)
+script = ExtResource("3_ga7wk")
+title = "Demonology"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="shelf/book2"]
+scale = Vector2(0.22325517, 0.22325514)
+texture = ExtResource("3_dmqdl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/book2"]
+position = Vector2(-1.1529541, 0)
+shape = SubResource("RectangleShape2D_utyjt")
+
+[node name="book3" type="Area2D" parent="shelf"]
+position = Vector2(-16.142147, -503.86346)
+script = ExtResource("3_ga7wk")
+title = "fuck shit"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="shelf/book3"]
+scale = Vector2(0.09447258, 0.2094963)
+texture = ExtResource("4_uwj02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shelf/book3"]
+position = Vector2(-4.0355225, -12.683075)
+scale = Vector2(1.1530055, 1.1530055)
+shape = SubResource("RectangleShape2D_jio4l")
