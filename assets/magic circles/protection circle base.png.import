@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7klghyccvxtc"
-path="res://.godot/imported/angel middle.png-f2f6bca04287833e22d6203c77a72404.ctex"
+uid="uid://dxjq6kccrwddk"
+path="res://.godot/imported/protection circle base.png-6bde0d5080d3f4a39575dbef7a1dff97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/general assets/magic circles/angel middle.png"
-dest_files=["res://.godot/imported/angel middle.png-f2f6bca04287833e22d6203c77a72404.ctex"]
+source_file="res://assets/magic circles/protection circle base.png"
+dest_files=["res://.godot/imported/protection circle base.png-6bde0d5080d3f4a39575dbef7a1dff97.ctex"]
 
 [params]
 

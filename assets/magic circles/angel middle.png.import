@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq1ieeo43rvt5"
-path="res://.godot/imported/demon middle.png-565cc9cc1a23d5f1c8505a14ad6a0382.ctex"
+uid="uid://c7klghyccvxtc"
+path="res://.godot/imported/angel middle.png-7ddc92da89a5c0fe9f70fa3d66795472.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/general assets/magic circles/demon middle.png"
-dest_files=["res://.godot/imported/demon middle.png-565cc9cc1a23d5f1c8505a14ad6a0382.ctex"]
+source_file="res://assets/magic circles/angel middle.png"
+dest_files=["res://.godot/imported/angel middle.png-7ddc92da89a5c0fe9f70fa3d66795472.ctex"]
 
 [params]
 

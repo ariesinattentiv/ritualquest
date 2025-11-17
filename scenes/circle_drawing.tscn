@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://sje763op8dio" path="res://assets/general assets/ending/explosion4.jpg" id="1_v876a"]
 [ext_resource type="Texture2D" uid="uid://b81l6548gjr3y" path="res://assets/general assets/rooms/testing lab/final/clock.png" id="2_ryesw"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="3_mxf0x"]
-[ext_resource type="Texture2D" uid="uid://dxjq6kccrwddk" path="res://assets/general assets/magic circles/protection circle base.png" id="4_cgoam"]
-[ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/general assets/magic circles/demon middle.png" id="5_ryesw"]
-[ext_resource type="Texture2D" uid="uid://c1u2p6pixaroc" path="res://assets/general assets/magic circles/sprite middle.png" id="6_cgoam"]
-[ext_resource type="Texture2D" uid="uid://c7klghyccvxtc" path="res://assets/general assets/magic circles/angel middle.png" id="7_ryesw"]
+[ext_resource type="Texture2D" uid="uid://dxjq6kccrwddk" path="res://assets/magic circles/protection circle base.png" id="4_cgoam"]
+[ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/magic circles/demon middle.png" id="5_ryesw"]
+[ext_resource type="Texture2D" uid="uid://c1u2p6pixaroc" path="res://assets/magic circles/sprite middle.png" id="6_cgoam"]
+[ext_resource type="Texture2D" uid="uid://c7klghyccvxtc" path="res://assets/magic circles/angel middle.png" id="7_ryesw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg1fr"]
 bg_color = Color(0.60969996, 0.64487505, 0.67, 0.39607844)
