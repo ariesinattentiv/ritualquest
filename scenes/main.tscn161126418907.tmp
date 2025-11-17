@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dpmdv0r5d65uq"]
+[gd_scene load_steps=31 format=3 uid="uid://dpmdv0r5d65uq"]
 
 [ext_resource type="PackedScene" uid="uid://bxsdb7yq36sev" path="res://scenes/rm_botany_lab.tscn" id="1_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cyp2fmpgd13rq" path="res://scenes/rm_testing_lab.tscn" id="2_tefeu"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="13_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cw8nkracrhq67" path="res://scenes/page.tscn" id="14_muem4"]
-[ext_resource type="Script" path="res://scripts/ObjectInfoUI.gd" id="14_yq6so"]
 [ext_resource type="AudioStream" uid="uid://caxrk4yhec8k3" path="res://assets/general assets/sound/ambience.mp3" id="15_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://b8rx3o13m8w0n" path="res://assets/general assets/ui2/plus.png" id="15_yc10j"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="16_0ld40"]
@@ -120,7 +119,6 @@ player = NodePath("../Player")
 size = Vector2i(1080, 720)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-script = ExtResource("14_yq6so")
 
 [node name="dummy" type="Button" parent="Camera2D/CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -260,11 +258,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 32.0
-offset_top = 1.0
-offset_right = 32.0
-offset_bottom = 1.0
-scale = Vector2(0.9, 0.9)
+offset_left = -23.0
+offset_top = 0.0
+offset_right = -23.0
+offset_bottom = 0.0
 mouse_filter = 1
 
 [node name="Close" type="TextureButton" parent="Camera2D/CanvasLayer/PlayerScreen/playerscreen overlay"]

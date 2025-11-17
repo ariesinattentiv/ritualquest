@@ -3,6 +3,8 @@ extends Node
 
 signal move_player(spawn_pos: Vector2)
 signal pin(pic: Sprite2D)
+signal open_screen(node_name:String)
+signal open_book(book_title:String)
 
 ## travel function emits the move_player signal that is linked to
 ## the [method Player.change_rooms] function in the player script, passing
@@ -17,3 +19,12 @@ func travel(room,door):
 
 func pin_photo(img: Sprite2D):
 	pin.emit(img)
+
+func handle_interaction(source: String, booktitle = null):
+	match source:
+		"Library Bookcase 2":
+			open_screen.emit("bookshelf")
+		"Draw circle":
+			open_screen.emit("Circle drawing")
+		"Bookshelf":
+			open_book.emit(booktitle)
