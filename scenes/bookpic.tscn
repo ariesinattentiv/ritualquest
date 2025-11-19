@@ -1,25 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cax3ucwhacfxt"]
+[gd_scene load_steps=3 format=3 uid="uid://cax3ucwhacfxt"]
 
 [ext_resource type="Script" uid="uid://btndgym6psfgy" path="res://scripts/bookpic.gd" id="1_uens3"]
 [ext_resource type="Texture2D" uid="uid://w11nupesmmcc" path="res://assets/general assets/ui2/pushpin.png" id="2_uens3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_er0i5"]
-size = Vector2(125, 127)
-
-[node name="Bookpic" type="Area2D"]
+[node name="Bookpic" type="TextureRect"]
 script = ExtResource("1_uens3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_er0i5")
-
 [node name="Pin" type="TextureButton" parent="."]
-offset_left = 38.0
-offset_top = -61.0
-offset_right = 60.0
-offset_bottom = -39.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_right = -15.0
+offset_bottom = 31.0
+grow_horizontal = 0
 texture_normal = ExtResource("2_uens3")
 ignore_texture_size = true
 stretch_mode = 0

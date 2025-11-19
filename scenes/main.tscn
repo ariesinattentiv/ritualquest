@@ -486,11 +486,16 @@ offset_top = -1284.0
 offset_right = 484.0
 offset_bottom = 1396.0
 theme_override_fonts/normal_font = ExtResource("16_0ld40")
+theme_override_fonts/bold_font = ExtResource("16_0ld40")
+theme_override_fonts/bold_italics_font = ExtResource("16_0ld40")
+theme_override_fonts/italics_font = ExtResource("16_0ld40")
+theme_override_fonts/mono_font = ExtResource("16_0ld40")
 theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 theme_override_font_sizes/bold_italics_font_size = 60
 theme_override_font_sizes/italics_font_size = 60
 theme_override_font_sizes/mono_font_size = 60
+bbcode_enabled = true
 scroll_following = true
 
 [node name="uiborder" type="Sprite2D" parent="Camera2D/CanvasLayer"]

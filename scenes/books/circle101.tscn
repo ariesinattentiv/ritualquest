@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsn0vmvj4rgnm"]
+[gd_scene load_steps=9 format=3 uid="uid://bsn0vmvj4rgnm"]
 
 [ext_resource type="Texture2D" uid="uid://bhciibcltplnd" path="res://assets/general assets/ui/bookreal.jpg" id="1_8mrqe"]
 [ext_resource type="Script" uid="uid://d2qvc7po536pv" path="res://scripts/readable_book.gd" id="1_sr6wr"]
@@ -7,10 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dnpnqfd6evopv" path="res://assets/general assets/ui/i1.png" id="4_0ulgv"]
 [ext_resource type="Texture2D" uid="uid://cq1ieeo43rvt5" path="res://assets/magic circles/demon middle.png" id="5_40n5q"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="6_6v046"]
+[ext_resource type="PackedScene" uid="uid://cax3ucwhacfxt" path="res://scenes/bookpic.tscn" id="7_mkgc7"]
 
 [node name="circle 101" type="Node2D"]
 script = ExtResource("1_sr6wr")
-filepath = null
+filepath = "res://assets/booktext/magic circle 101/"
+max_pages = 2
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.76666665, 1)
@@ -30,7 +33,7 @@ offset_bottom = 140.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Next page" type="TextureButton" parent="OuterControl"]
+[node name="Prev page" type="TextureButton" parent="OuterControl"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -43,7 +46,7 @@ texture_normal = ExtResource("2_sr6wr")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Prev page" type="TextureButton" parent="OuterControl"]
+[node name="Next page" type="TextureButton" parent="OuterControl"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -67,6 +70,7 @@ offset_top = 154.5
 offset_right = 259.9796
 offset_bottom = 352.5568
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("4_0ulgv")
 expand_mode = 1
 
@@ -78,6 +82,7 @@ offset_top = 177.97821
 offset_right = 259.97958
 offset_bottom = 376.035
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("4_0ulgv")
 expand_mode = 1
 flip_h = true
@@ -91,6 +96,7 @@ offset_top = 24.021729
 offset_right = 515.3601
 offset_bottom = 222.07874
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("4_0ulgv")
 expand_mode = 1
 
@@ -102,6 +108,7 @@ offset_top = 74.891235
 offset_right = 515.3601
 offset_bottom = 272.94824
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("4_0ulgv")
 expand_mode = 1
 
@@ -113,11 +120,13 @@ offset_top = 50.108765
 offset_right = 515.3601
 offset_bottom = 248.16577
 rotation = 1.5707964
+mouse_filter = 2
 texture = ExtResource("4_0ulgv")
 expand_mode = 1
 flip_v = true
 
 [node name="1" type="Control" parent="OuterControl"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,8 +139,10 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="2" type="Control" parent="OuterControl"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,16 +155,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect6" type="TextureRect" parent="OuterControl/2"]
-layout_mode = 0
-offset_left = 57.0
-offset_top = -23.0
-offset_right = 232.0
-offset_bottom = 152.0
-texture = ExtResource("5_40n5q")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="Label" type="Label" parent="OuterControl/2"]
 layout_mode = 0
@@ -167,3 +168,18 @@ theme_override_font_sizes/font_size = 11
 text = "Outer circle for summoning demons"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Bookpic" parent="OuterControl/2" instance=ExtResource("7_mkgc7")]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -12.0
+offset_right = 242.0
+offset_bottom = 152.0
+texture = ExtResource("5_40n5q")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Pin" parent="OuterControl/2/Bookpic" index="0"]
+mouse_filter = 1
+
+[editable path="OuterControl/2/Bookpic"]

@@ -22,5 +22,5 @@ func _on_mouse_exited() -> void:
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and selected:
+	if event is InputEventMouseButton and selected and event.pressed:
 		SignalHub.handle_interaction("Bookshelf",title)

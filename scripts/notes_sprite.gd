@@ -65,8 +65,8 @@ func _on_new_note_pressed() -> void:
 	new_note.position = Vector2(40,40)
 	$AudioStreamPlayer.play()
 
-func add_img_to_notes(img: Sprite2D):
+func add_img_to_notes(img: Texture2D):
 	var new_pic = notepic_scene.instantiate()
-	new_pic.get_node("TextureRect").set_texture(img.get_texture())
+	new_pic.get_node("TextureRect").set_texture(img)
 	pages.get(current_page).add_child(new_pic)
 	new_pic.position = Vector2(40,40)
