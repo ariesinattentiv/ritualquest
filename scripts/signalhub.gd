@@ -28,3 +28,22 @@ func handle_interaction(source: String, booktitle = null):
 			open_screen.emit("Circle drawing")
 		"Bookshelf":
 			open_book.emit(booktitle)
+		"Plant table 1":
+			TextPanel.display_text("This specimen is a typical mini saguaro cactus, not normally found in these regions. Its biological makeup is unremarkable, but its location is what gives me pause. Cacti cannot survive in these conditions, so why were so many seeds readily available?")
+		"Plant table 2":
+			TextPanel.display_text("This first specimen is an oddity - all plants of this variety grow in the exact same formation, regardless of external conditions. What's even stranger is the fact that its makeup is entirely root - no other parts of any kind that we've been able to find. The second specimen appears to be a perfectly average hydrangea sample.")
+		"Library table":
+			TextPanel.display_text("Here, we see the ancient runes that serve as the incantation for the ritual we are trying to perform. These incantations are typically written in an encoded manner, to prevent the immense power they hold from falling into the wrong hands. The risk of reciting such words without a proper guide and order is simply too great to attempt it. Decryption progress is ongoing.")
+			# puts np_wordsofpower in the book
+		"Archive shelf":
+			TextPanel.display_text("This civilization made use of many written forms of expression, some seeming to be more artistic than communicative by intention. As an example, we have a theoretical key to tendrilis - an alphabet written through vines, usually used for decorative purposes.")
+			# puts np_tendrilis in the book
+		"H1Directory":
+			TextPanel.display_text("<- Botany Lab
+	Gemstone Lab ->")
+		"H2Directory":
+			TextPanel.display_text("<- Gemstone Lab
+	Ritual Chamber ->")
+		"H3Directory":
+			TextPanel.display_text("<- Ritual Chamber
+	Library ->")

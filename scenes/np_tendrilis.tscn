@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://d05160a23yke5"]
+
+[ext_resource type="Script" uid="uid://dthcflbjxqkyt" path="res://scripts/note.gd" id="1_lwpkl"]
+[ext_resource type="Texture2D" uid="uid://c6l8j42cfpbkb" path="res://assets/general assets/ui2/note.png" id="2_ma7f1"]
+[ext_resource type="Texture2D" uid="uid://dauu8gg6mlvj0" path="res://assets/general assets/eve puzzle/tendrilis.png" id="3_lwpkl"]
+[ext_resource type="Texture2D" uid="uid://bjkgji1a0resx" path="res://assets/general assets/ui2/x.png" id="4_u5mod"]
+
+[node name="ColorRect" type="ColorRect"]
+offset_right = 200.0
+offset_bottom = 200.0
+color = Color(0.6692881, 0.6824967, 0.8699466, 1)
+script = ExtResource("1_lwpkl")
+
+[node name="Note" type="Sprite2D" parent="."]
+position = Vector2(100.99999, 104.5)
+scale = Vector2(0.8222222, 0.8361111)
+texture = ExtResource("2_ma7f1")
+
+[node name="Wordsofpower" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 2821.0
+offset_bottom = 2863.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_lwpkl")
+
+[node name="Drag button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -16.0
+offset_top = -15.0
+offset_right = 208.0
+offset_bottom = 10.0
+mouse_filter = 1
+
+[node name="Delete" type="Button" parent="."]
+layout_mode = 0
+offset_left = 175.00002
+offset_top = 168.00002
+offset_right = 409.0
+offset_bottom = 470.0
+scale = Vector2(0.1, 0.1)
+mouse_filter = 1
+icon = ExtResource("4_u5mod")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="button_down" from="Drag button" to="." method="_on_drag_button_button_down"]
+[connection signal="button_up" from="Drag button" to="." method="_on_drag_button_button_up"]
+[connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]
