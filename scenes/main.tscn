@@ -11,13 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://domkx0sahmfqo" path="res://scenes/rm_ritual_room.tscn" id="6_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://dpewwhd65p0wb" path="res://scenes/rm_hallway3.tscn" id="7_trceg"]
 [ext_resource type="Script" uid="uid://dsxcr8q3ju18j" path="res://scripts/InteractableObject.gd" id="9_pm3ni"]
-[ext_resource type="Script" uid="uid://da4yfugt6kwkl" path="res://scripts/camera_2d.gd" id="11_jscy8"]
+[ext_resource type="Script" path="res://scripts/camera_2d.gd" id="11_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cyep36fy237ps" path="res://assets/general assets/ui/t1.png" id="11_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://ctji0mbffcgka" path="res://assets/general assets/ui/book3real.jpg" id="12_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://blr517gj1xw8q" path="res://assets/general assets/ui/panel.jpg" id="13_a8y0u"]
 [ext_resource type="Script" uid="uid://brf6ykcqq1p7l" path="res://scripts/notes_sprite.gd" id="13_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://cw8nkracrhq67" path="res://scenes/page.tscn" id="14_muem4"]
-[ext_resource type="Script" path="res://scripts/ObjectInfoUI.gd" id="14_yq6so"]
+[ext_resource type="Script" uid="uid://celqxnw4xafv" path="res://scripts/ObjectInfoUI.gd" id="14_yq6so"]
 [ext_resource type="AudioStream" uid="uid://caxrk4yhec8k3" path="res://assets/general assets/sound/ambience.mp3" id="15_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://b8rx3o13m8w0n" path="res://assets/general assets/ui2/plus.png" id="15_yc10j"]
 [ext_resource type="FontFile" uid="uid://cihubox7bd0vp" path="res://assets/fonts/mojangles.otf/mojangles.otf" id="16_0ld40"]
@@ -31,7 +31,7 @@
 [ext_resource type="Script" uid="uid://c8j212vr5m8c0" path="res://scripts/bookspawn.gd" id="27_2f3dj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxglm"]
-size = Vector2(179, 212.5)
+size = Vector2(54.8125, 119.5625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wyq8"]
 size = Vector2(1125.416, 1355.8333)
@@ -41,17 +41,171 @@ size = Vector2(1125.416, 1355.8333)
 [node name="rm_botany_lab" parent="." instance=ExtResource("1_tbgi4")]
 position = Vector2(405, 180)
 
+[node name="Plant table 1" type="Area2D" parent="rm_botany_lab"]
+position = Vector2(-34, 67)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "Plant table 1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_botany_lab/Plant table 1"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_botany_lab/Plant table 1"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
+
+[node name="Plant table 2" type="Area2D" parent="rm_botany_lab"]
+position = Vector2(262, 69)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "Plant table 2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_botany_lab/Plant table 2"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_botany_lab/Plant table 2"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
+
+[node name="DoorNW" type="Area2D" parent="rm_botany_lab"]
+position = Vector2(-300, -70)
+script = ExtResource("9_pm3ni")
+prompt_text = "Enter
+[E]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_botany_lab/DoorNW"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_botany_lab/DoorNW"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Enter
+[E]"
+horizontal_alignment = 1
+
 [node name="rm_testing_lab" parent="." instance=ExtResource("2_tefeu")]
 position = Vector2(404, 990)
 
+[node name="DoorSW" type="Area2D" parent="rm_testing_lab"]
+position = Vector2(275, -28)
+script = ExtResource("9_pm3ni")
+prompt_text = "Enter
+[E]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_testing_lab/DoorSW"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_testing_lab/DoorSW"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Enter
+[E]"
+horizontal_alignment = 1
+
 [node name="rm_hallway1" parent="." instance=ExtResource("5_tefeu")]
 position = Vector2(1215, 180)
+
+[node name="H1Directory" type="Area2D" parent="rm_hallway1"]
+position = Vector2(0, -30)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "H1Directory"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_hallway1/H1Directory"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_hallway1/H1Directory"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
 
 [node name="rm_gemstone_lab" parent="." instance=ExtResource("4_choun")]
 position = Vector2(2025, 180)
 
 [node name="rm_hallway2" parent="." instance=ExtResource("5_ya4ey")]
 position = Vector2(2835, 180)
+
+[node name="H2Directory" type="Area2D" parent="rm_hallway2"]
+position = Vector2(-7, -30)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "H2Directory"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_hallway2/H2Directory"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_hallway2/H2Directory"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
 
 [node name="rm_ritual_room" parent="." instance=ExtResource("6_eb6dy")]
 position = Vector2(3645, 180)
@@ -85,6 +239,32 @@ horizontal_alignment = 1
 [node name="rm_hallway3" parent="." instance=ExtResource("7_trceg")]
 position = Vector2(4455, 180)
 
+[node name="H3Directory" type="Area2D" parent="rm_hallway3"]
+position = Vector2(-5, -30)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "H3Directory"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_hallway3/H3Directory"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_hallway3/H3Directory"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
+
 [node name="rm_library" parent="." instance=ExtResource("3_o6xl0")]
 position = Vector2(5265, 180)
 
@@ -106,8 +286,110 @@ theme_override_font_sizes/font_size = 200
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Library table" type="Area2D" parent="rm_library"]
+position = Vector2(-93, 76)
+script = ExtResource("9_pm3ni")
+prompt_text = "Interact
+[E]"
+object_name = "Library table"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_library/Library table"]
+position = Vector2(-1, 46)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_library/Library table"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
+
+[node name="DoorNE" type="Area2D" parent="rm_library"]
+position = Vector2(310, -60)
+script = ExtResource("9_pm3ni")
+prompt_text = "Enter
+[E]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_library/DoorNE"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_library/DoorNE"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Enter
+[E]"
+horizontal_alignment = 1
+
 [node name="rm_candle_archive" parent="." instance=ExtResource("4_tipki")]
 position = Vector2(5265, 990)
+
+[node name="Archiveshelf" type="Area2D" parent="rm_candle_archive"]
+position = Vector2(-318, 81)
+script = ExtResource("9_pm3ni")
+prompt_text = "Examine
+[E]"
+object_name = "Archive shelf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_candle_archive/Archiveshelf"]
+position = Vector2(-25.40625, 22.78125)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_candle_archive/Archiveshelf"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = -236.0
+offset_right = 143.0
+offset_bottom = -173.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Examine
+[E]"
+horizontal_alignment = 1
+
+[node name="DoorSE" type="Area2D" parent="rm_candle_archive"]
+position = Vector2(310, -80)
+script = ExtResource("9_pm3ni")
+prompt_text = "Enter
+[E]"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rm_candle_archive/DoorSE"]
+position = Vector2(1, 45)
+shape = SubResource("RectangleShape2D_vxglm")
+
+[node name="Prompt" type="Label" parent="rm_candle_archive/DoorSE"]
+anchors_preset = -1
+anchor_right = 0.5
+offset_left = -140.0
+offset_top = -73.0
+offset_right = 141.0
+offset_bottom = -10.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -6
+theme_override_fonts/font = ExtResource("16_0ld40")
+theme_override_font_sizes/font_size = 20
+text = "Enter
+[E]"
+horizontal_alignment = 1
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("5_85g3d")]
 position = Vector2(202, 224)

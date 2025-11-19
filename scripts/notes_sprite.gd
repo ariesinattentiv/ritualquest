@@ -59,8 +59,6 @@ func render_page(dest_page:int):
 	$PageNumLeft.text = str(display_number)
 	$PageNumRight.text = str(display_number + 1)
 	
-	
-
 func _on_new_note_pressed() -> void:
 	var new_note = note_scene.instantiate()
 	pages.get(current_page).add_child(new_note)
