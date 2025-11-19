@@ -1,7 +1,5 @@
 extends Node
 
-var currentbook
-
 var circle101 = preload("res://scenes/books/circle101.tscn")
 
 func _ready() -> void:
@@ -13,12 +11,12 @@ func display_book(title:String):
 	match title:
 		"Magic Circle 101":
 			print("opening book")
-			currentbook = circle101.instantiate()
-			add_child(currentbook)
+			add_child(circle101.instantiate())
+			
 
 func close_book():
 	$Close.visible = false
-	currentbook.queue_free()
+	get_child(1).queue_free()
 	
 	
 			

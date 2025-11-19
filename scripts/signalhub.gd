@@ -2,7 +2,7 @@ extends Node
 
 
 signal move_player(spawn_pos: Vector2)
-signal pin(pic: Sprite2D)
+signal pin(pic: Texture2D)
 signal open_screen(node_name:String)
 signal open_book(book_title:String)
 
@@ -17,7 +17,7 @@ func travel(room,door):
 	var spawn_point = spawn.global_position as Vector2
 	move_player.emit(spawn_point)
 
-func pin_photo(img: Sprite2D):
+func pin_photo(img: Texture2D):
 	pin.emit(img)
 
 func handle_interaction(source: String, booktitle = null):

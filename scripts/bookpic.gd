@@ -1,4 +1,4 @@
-extends Area2D
+extends TextureRect
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,4 +15,4 @@ func _on_mouse_exited() -> void:
 
 
 func _on_pin_pressed() -> void:
-	SignalHub.pin_photo($Sprite2D)
+	SignalHub.pin_photo(texture)
